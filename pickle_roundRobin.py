@@ -85,7 +85,7 @@ def get_matches(participants):
 
 # Streamlit interface for the tournament creator
 st.title("Oliver's RR Tournament Creator")
-names_input = st.text_input("Enter participant names, comma-separated (8-12):")
+names_input = st.text_input("Enter participant names, comma-separated (8-12) - They are automatically randomized")
 
 if names_input:
     if 'participants' not in st.session_state or st.session_state['input'] != names_input:
