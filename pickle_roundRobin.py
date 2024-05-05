@@ -113,6 +113,10 @@ if names_input:
                 st.markdown(f"<h2 style='color: {color};'>Round {i}</h2>", unsafe_allow_html=True)
                 score_inputs = []
                 for j, match in enumerate(round, 1):
+                    if j%2 == 0:
+                        st.write("Court 2:", match[0] + " & " + match[1], " vs ", match[2] + " & " + match[3])
+                    else:
+                        st.write("Court 1:", match[0] + " & " + match[1], " vs ", match[2] + " & " + match[3])
                     with st.container():
                         col1, col2 = st.columns(2)
                         with col1:
