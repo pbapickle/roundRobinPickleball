@@ -71,11 +71,11 @@ def get_matches(participants):
         for round in rounds:
             round_matches = []
             match1 = [round[0], round[1]]
-            #random.shuffle(match1)
-            #random.shuffle(match1)
+            random.shuffle(match1)
+            random.shuffle(match1)
             match2 = [round[2], round[3]]
-            #random.shuffle(match2)
-            #random.shuffle(match2)
+            random.shuffle(match2)
+            random.shuffle(match2)
             round_matches.append((participants[match1[0][0]], participants[match1[0][1]], participants[match1[1][0]], participants[match1[1][1]]))
             round_matches.append((participants[match2[0][0]], participants[match2[0][1]], participants[match2[1][0]], participants[match2[1][1]]))
             all_matches.append(round_matches)
@@ -91,7 +91,7 @@ if names_input:
     if 'participants' not in st.session_state or st.session_state['input'] != names_input:
         # Update the session state for participants
         participants = [name.strip().capitalize() for name in names_input.split(',')]
-        #random.shuffle(participants)  # Randomize the list of participants
+        random.shuffle(participants)  # Randomize the list of participants
         st.session_state['participants'] = participants
         st.session_state['input'] = names_input  # Store the current input to compare later
         st.session_state['matches'] = get_matches(participants)  # Initialize matches and store
